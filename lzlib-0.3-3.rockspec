@@ -1,15 +1,15 @@
 -- This file was automatically generated for the LuaDist project.
 
 package="lzlib"
-version="0.3-2"
+version="0.3-3"
 -- LuaDist source
 source = {
-  tag = "0.3-2",
+  tag = "0.3-3",
   url = "git://github.com/LuaDist-testing/lzlib.git"
 }
 -- Original source
 -- source = {
---    url = "http://luaforge.net/frs/download.php/3059/lzlib-0.3.tar.gz",
+--    url = "http://luarocks.org/downloads/lzlib-0.3.tar.gz",
 --    md5 = "4ed15c23b2dc80b10d2cabbf1ed88a99"
 -- }
 description = {
@@ -38,6 +38,7 @@ build = {
          sources = "lzlib.c",
          libdirs = "$(ZLIB_LIBDIR)",
          incdirs = "$(ZLIB_INCDIR)",
+         libraries = "z",
       },
       gzip = {
          sources = "lgzip.c",
