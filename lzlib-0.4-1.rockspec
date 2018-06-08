@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package="lzlib"
-version="0.4.work3-1"
+version="0.4-1"
 -- LuaDist source
 source = {
-  tag = "0.4.work3-1",
+  tag = "0.4-1",
   url = "git://github.com/LuaDist-testing/lzlib.git"
 }
 -- Original source
 -- source = {
---    url = "https://github.com/LuaDist/lzlib/archive/0.4-work3.zip",
---    dir = "lzlib-0.4-work3",
+--    url = "git://github.com/LuaDist/lzlib.git",
+--    tag = "0.4",
 -- }
 description = {
    summary = "Lua bindings to the ZLib compression library",
@@ -23,7 +23,7 @@ description = {
    license = "MIT/X11"
 }
 dependencies = {
-   "lua >= 5.1, < 5.3"
+   "lua ~> 5.1"
 }
 external_dependencies = {
    ZLIB = {
