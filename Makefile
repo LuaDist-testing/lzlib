@@ -18,7 +18,6 @@ CFLAGS= $(INCS) $(DEFS) $(WARN) -O2 -fPIC
 WARN= -g -Werror -Wall -pedantic #-ansi -pedantic -Wall
 INCS= -I$(LUAINC) -I$(ZLIB)
 LIBS= -L$(ZLIB) -lz -L$(LUALIB) -L$(LUABIN) # -llua51
-LIBFLAG= -shared
 
 MYLIB=lzlib
 
@@ -41,10 +40,10 @@ test: $(T_ZLIB) $(T_GZIP)
 	$(LUABIN)/lua -lluarc test_gzip.lua
 
 $(T_ZLIB): lzlib.o
-	$(CC) -o $@ $(LIBFLAG) $< $(LIBS)
+	$(CC) -o $@ -shared $< $(LIBS)
 
 $(T_GZIP): lgzip.o
-	$(CC) -o $@ $(LIBFLAG) $< $(LIBS)
+	$(CC) -o $@ -shared $< $(LIBS)
 
 clean:
 	rm -f *.o *.so core core.* a.out
